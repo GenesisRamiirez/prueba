@@ -122,6 +122,24 @@
           }
           }
         </script>
+        <script src="https://dpal.io/api/js/dpal.min.js"></script>
+
+        <button id="openDPALWallet">Open DPAL Wallet</button>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dpal/0.1.0/dpal.min.js"></script>
+        
+        <script>
+          // Initialize the Dpal payment processor
+          var dpal = new Dpal({
+            walletAddress: "DPep6taHcV9Wj77Nzj4jMcYCkTPAvSp2Fp"
+          });
+        
+          // Add a button to your website that will start the payment process
+          var paymentButton = document.getElementById("paymentButton");
+          paymentButton.addEventListener("click", function() {
+            dpal.startPayment();
+          });
+        </script>
 
       </section>
         
