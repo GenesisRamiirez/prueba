@@ -1,0 +1,121 @@
+/* CSS para la landing page */
+
+/* Estilos generales */
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    font-family: "Bebas Neue", sans-serif;
+  }
+  
+  /* Estilos del header */
+  header {
+    background-color: #ffcf00;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #450d54;
+    text-decoration: none;
+  }
+  
+  /* Estilos del hero section */
+  #hero {
+    background-color: #450d54;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  #hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    background-color: #ffcf00;
+    color: #450d54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  /* Estilos de las secciones */
+  section {
+    padding: 50px;
+  }
+  
+  section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #450d54;
+  }
+  
+  section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos de la sección de proyectos */
+  .project {
+    margin-bottom: 30px;
+  }
+  
+  .project img {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos del formulario de contacto */
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  form button {
+    background-color: #ffcf00;
+    color: #450d54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+   #buttonDPAL{
+    background-color: #ffcf00;
+    color: #450d54;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  

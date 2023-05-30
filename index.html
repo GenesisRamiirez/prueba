@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Personal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dogeapi/0.1.0/doge.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <section id="hero">
+        <h1>Bienvenido a esta pagina de prueba</h1>
+        <p>¡Solo es una prueba!</p>
+        <a href="#contact" class="cta-button">Contáctame</a>
+    </section>
+
+    <section id="about">
+        <h2>Acerca de mí</h2>
+        <p>Hola, soy una prueba. Soy un [desarrollo que esta en proceso </p>
+    </section>
+
+    <section id="projects">
+        <h2>Proyectos</h2>
+        <div class="project">
+            <img src="project1.jpg" alt="Proyecto 1">
+            <h3>Proyecto 1</h3>
+            <p>Descripción del proyecto 1.</p>
+        </div>
+        <div class="project">
+            <img src="project2.jpg" alt="Proyecto 2">
+            <h3>Proyecto 2</h3>
+            <p>Descripción del proyecto 2.</p>
+        </div>
+        
+    </section>
+
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>¡Me encantaría saber de ti! Puedes contactarme a través del siguiente formulario o utilizar los enlaces de redes sociales:</p>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <div>
+             <button type="submit" id="whatsapp-button" href="https://wa.me/" target="_blank">Enviar mensaje por WhatsApp>
+             </button>
+             
+             </div>
+        </form>
+        <script src="https://dpal.io/api/js/dpal.min.js"></script>
+
+        <button id="openDPALWallet">Open DPAL Wallet</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dpal/0.1.0/dpal.min.js"></script>
+
+        <script>
+          // Initialize the Dpal payment processor
+          var dpal = new Dpal({
+            walletAddress: "YOUR_WALLET_ADDRESS"
+          });
+
+          // Add a button to your website that will start the payment process
+          var paymentButton = document.getElementById("paymentButton");
+          paymentButton.addEventListener("click", function() {
+            dpal.startPayment();
+          });
+        </script>
+
+      <section id="contact">
+        <button id=buttonDPAL onclick="executeCode()">Conectar Dpal</button>
+
+        <script>
+          async function executeCode() {
+          const doge = window?.DogeApi;
+
+          // Habilitar para interactuar
+          const enableResult = await doge.enable();
+          if (enableResult?.status === 'success') {
+            const userAddressResult = await doge.userAddress();
+            const { network } = await doge.network();
+          }
+        
+          // or check isEnabled
+          if (doge && (await doge.isEnabled())) {
+            const userAddressResult = await doge.userAddress();
+            // const { network } = await doge.network();
+          }
+        
+          // Solicitud de pago
+          if (await doge.isEnabled()) {
+            const rs = await doge.useDoge(cost, toAddress, 'Buy Things Info');
+            if (rs?.txid) {
+              // successed
+              // you can track the transaction is confirmed by txid in doge chain
+              // for example use chain.so or orther doge api serveices
+              // curl "https://chain.so/api/v3/transaction/DOGE/597bafa25fcbb081467bdeb030a42bf441dbfcc054bdcfad31a829d7db5d931f" -H "API-KEY: {{api_key}}"
+              // https://chain.so/api/ 
+            }
+          }
+
+          // Solicitud para firmar mensaje
+          if (await doge.isEnabled()) {
+            const rs = await doge.sign();
+            if (rs?.message && rs.sig) {
+              // rs.sig example : H5DYFib9KhCRnOpb63/qNTROn6mrvXPuNw5aoogwYNaEBF2QP4uKo5CDPbJmZNiO7HBJIETaLLtSPpU9dVtkSzE=
+              // you can use bitcore-lib-doge recover this signature and get r,s,v
+            }
+          }
+          }
+        </script>
+
+      </section>
+        
+    </section>
+
+    <footer>
+        <p>Derechos de autor &copy; 2023 Genesis Ramirez</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://dpal.io/api/js/dpal.min.js"></script>
+    
+</body>
+
+</html>
