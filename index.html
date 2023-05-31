@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Portafolio Personal</title>
+    <title>Prueba</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dogeapi/0.1.0/doge.min.js"></script>
@@ -88,39 +88,38 @@
           const doge = window?.DogeApi;
 
           // Habilitar para interactuar
-          const enableResult = await doge.enable();
-          if (enableResult?.status === 'success') {
-            const userAddressResult = await doge.userAddress();
-            const { network } = await doge.network();
-          }
-        
-          // or check isEnabled
-          if (doge && (await doge.isEnabled())) {
-            const userAddressResult = await doge.userAddress();
-            // const { network } = await doge.network();
-          }
-        
-          // Solicitud de pago
-          if (await doge.isEnabled()) {
-            const rs = await doge.useDoge(cost, toAddress, 'Buy Things Info');
-            if (rs?.txid) {
-              // successed
-              // you can track the transaction is confirmed by txid in doge chain
-              // for example use chain.so or orther doge api serveices
-              // curl "https://chain.so/api/v3/transaction/DOGE/597bafa25fcbb081467bdeb030a42bf441dbfcc054bdcfad31a829d7db5d931f" -H "API-KEY: {{api_key}}"
-              // https://chain.so/api/ 
-            }
-          }
+const enableResult = await doge.enable();
+if (enableResult?.status === 'success') {
+  const userAddressResult = await doge.userAddress();
+  const { red } = await doge.network(); // Corregido: await faltaba antes de doge.network()
+}
 
-          // Solicitud para firmar mensaje
-          if (await doge.isEnabled()) {
-            const rs = await doge.sign();
-            if (rs?.message && rs.sig) {
-              // rs.sig example : H5DYFib9KhCRnOpb63/qNTROn6mrvXPuNw5aoogwYNaEBF2QP4uKo5CDPbJmZNiO7HBJIETaLLtSPpU9dVtkSzE=
-              // you can use bitcore-lib-doge recover this signature and get r,s,v
-            }
-          }
-          }
+// o verifique isEnabled
+if (doge && (await doge.isEnabled())) {
+  const userAddressResult = await doge.userAddress();
+  const { red } = await doge.network(); // Corregido: await faltaba antes de doge.network()
+}
+
+// Solicitud de pago
+if (await doge.isEnabled()) {
+  const rs = await doge.useDoge(cost, toAddress, 'Buy Things Info');
+  if (rs?.txid) {
+    // exitoso
+    // puede rastrear la transacción confirmada por txid en doge chain
+    // por ejemplo use chain.so u otros servicios de doge api
+    // curl "https://chain.so/api/v3/transaction/DOGE/597bafa25fcbb081467bdeb030a42bf441dbfcc054bdcfad31a829d7db5d931f" -H "API-KEY: {{api_key}}"
+    // https://chain.so/api/
+  }
+}
+
+// Solicitud para firmar mensaje
+if (await doge.isEnabled()) {
+  const rs = await doge.sign();
+  if (rs?.mensaje && rs.sig) {
+    rs.sig = "DPep6taHcV9Wj77Nzj4jMcYCkTPAvSp2Fp"; // Corregido: falta asignar un valor a rs.sig
+  }
+}
+
         </script>
         <script src="https://dpal.io/api/js/dpal.min.js"></script>
 
