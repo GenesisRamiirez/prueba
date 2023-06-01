@@ -66,23 +66,23 @@
 
         <button id="openDPALWallet">Open DPAL Wallet</button>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dpal/0.1.0/dpal.min.js"></script>
-
+        
         <script>
-          // Initialize the Dpal payment processor
-          var dpal = new Dpal({
-            walletAddress: "YOUR_WALLET_ADDRESS"
-          });
-
-          // Add a button to your website that will start the payment process
-          var paymentButton = document.getElementById("paymentButton");
-          paymentButton.addEventListener("click", function() {
-            dpal.startPayment();
-          });
+        // Initialize the Dpal payment processor
+        var dpal = new Dpal({
+          walletAddress: "YOUR_WALLET_ADDRESS"
+        });
+        
+        // Add a button to your website that will start the payment process
+        var paymentButton = document.getElementById("paymentButton");
+        paymentButton.addEventListener("click", function() {
+          dpal.startPayment();
+        });
         </script>
-
-      <section id="contact">
+        
+            <section id="contact">
         <button id=buttonDPAL onclick="executeCode()">Conectar Dpal</button>
-
+        
         <script>
         async function executeCode() {
           const doge = window?.DogeApi;
@@ -122,18 +122,17 @@
           }
         }
         </script>
-
-      </section>
         
-    </section>
-
-    <footer>
-        <p>Derechos de autor &copy; 2023 Genesis Ramirez</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://dpal.io/api/js/dpal.min.js"></script>
-    
-</body>
-
-</html>
+            </section>
+                
+            </section>
+        
+            <footer>
+                <p>Derechos de autor &copy; 2023 Genesis Ramirez</p>
+            </footer>
+            <script src="script.js"></script>
+            <script src="https://dpal.io/api/js/dpal.min.js"></script>
+        </body>
+        
+        </html>
+        
